@@ -2,7 +2,7 @@
 
 # Carregar as credenciais a partir de variáveis de ambiente
 USERNAME=${GITHUB_USERNAME}
-TOKEN=${GITHUB_TOKEN} 
+TOKEN=${GITHUB_TOKEN_NEW} 
 
 # Definir URL do repositório com autenticação via token
 REPO_URL="https://$USERNAME:$TOKEN@github.com/LukasNasciment0/scriptsGit"
