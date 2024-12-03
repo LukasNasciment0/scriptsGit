@@ -4,7 +4,7 @@
 USERNAME=${GITHUB_USERNAME}
 PASSWORD=${GITHUB_PASSWORD}
 
-REPO_URL="https://$USERNAME:$PASSWORD@github.com/eda-ufcg//LukasNasciment0/scriptsGit"
+REPO_URL="https://$USERNAME:$PASSWORD@github.com/LukasNasciment0/scriptsGit"
 # Verifica se há alterações a serem adicionadas
 if [[ -n $(git status -s) ]]; then
     echo "Adicionando alterações..."
