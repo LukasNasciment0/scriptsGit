@@ -10,6 +10,19 @@ REPO_URL="https://$USERNAME:$TOKEN@github.com/LukasNasciment0/scriptsGit"
 # Verifica se há alterações a serem adicionadas
 if [[ -n $(git status --porcelain) ]]; then
     echo "Adicionando alterações..."
+    
+    # Atualizar .gitignore
+    echo "*.log" >> .gitignore
+    echo "*.swp" >> .gitignore
+    echo "node_modules/" >> .gitignore
+
+    # Remover arquivos do repositório que agora estão no .gitignore
+    git rm --cached *.log
+    git rm --cached *.swp
+    git rm --cached -r node_modules/
+
+    git add .gitingnore
+
     git add .
 
     # Verificar se o argumento de commit foi fornecido
