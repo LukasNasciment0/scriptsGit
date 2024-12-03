@@ -13,3 +13,7 @@ node_modules/
 *.swp
 *.swo
 node_modules/
+*.log
+*.swp
+*.swo
+node_modules/
