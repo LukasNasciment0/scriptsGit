@@ -2,9 +2,9 @@
 
 # Carregar as credenciais a partir de variáveis de ambiente
 USERNAME=${GITHUB_USERNAME}
-PASSWORD=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
+PASSWORD=${GITHUB_PASSWORD}
 
-REPO_URL="https://$USERNAME:$PASSWORD@github.com/eda-ufcg/elementos-duplicados-LukasNasciment0.git" 
+REPO_URL="https://$USERNAME:$PASSWORD@github.com/eda-ufcg//LukasNasciment0/scriptsGit"
 # Verifica se há alterações a serem adicionadas
 if [[ -n $(git status -s) ]]; then
     echo "Adicionando alterações..."
