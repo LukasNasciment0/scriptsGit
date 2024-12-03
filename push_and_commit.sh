@@ -14,6 +14,7 @@ if [[ -n $(git status --porcelain) ]]; then
     # Atualizar .gitignore
     echo "*.log" >> .gitignore
     echo "*.swp" >> .gitignore
+    echo "*.swo" >> .gitignore
     echo "node_modules/" >> .gitignore
 
     # Remover arquivos do repositório que agora estão no .gitignore
