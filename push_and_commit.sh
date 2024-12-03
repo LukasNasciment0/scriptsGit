@@ -15,12 +15,8 @@ if [[ -n $(git status --porcelain) ]]; then
     echo "*.log" >> .gitignore
     echo "*.swp" >> .gitignore
     echo "*.swo" >> .gitignore
+    echo "*.sh.swo" >> .gitignore
     echo "node_modules/" >> .gitignore
-
-    # Remover arquivos do repositório que agora estão no .gitignore
-    git rm --cached *.log
-    git rm --cached *.swp
-    git rm --cached -r node_modules/
 
     git add .gitignore
 
