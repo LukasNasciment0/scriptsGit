@@ -40,6 +40,9 @@ else
 fi
 
 # Faz push para o repositório remoto
+echo $USERNAME
+echo $TOKEN
+
 echo "Fazendo push para o repositório remoto..."
 git push "$REPO_URL"
 
