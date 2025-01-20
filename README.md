@@ -6,8 +6,10 @@ Esses scripts facilitam muito o processo de uso do git, como:
 - adicionar, comitar e push 
 
 -----> IMPORTANTE <-------
+
 tenha variaveis globais do sistema ou atualiza as variaveis no codigo
 atualiza a URL do repositorio que está usando o script
+
 <----------------------------->
 
 
