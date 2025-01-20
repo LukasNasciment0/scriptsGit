@@ -7,8 +7,8 @@ Esses scripts facilitam muito o processo de uso do git, como:
 
 -----> IMPORTANTE <-------
 
-tenha variaveis globais do sistema ou atualiza as variaveis no codigo
-atualiza a URL do repositorio que está usando o script
+tenha variaveis globais do sistema ou atualize as variaveis no codigo
+e também a URL do repositorio que está usando o script
 
 <----------------------------->
 
