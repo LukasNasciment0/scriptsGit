@@ -1,45 +1,66 @@
+
 public class ArrayList {
 
+    private Integer[] array;
+    /**
+     * indice do ultimo elemento
+     */
+    private Integer last; 
    
     public ArrayList(int capacidadeInicial) {
-        // TODO
+        array = new Integer[capacidadeInicial];
+        last = -1;
     }
 
     public boolean isEmpty() {
-        // TODO
-        return false;
+        return array.length == 0;
     }
 
-    public void addFirst(int valor) {
-        // TODO
+   private boolean isFull(){
+      return this.size() == this.array.length;
+   }
+      
+   public void addFirst(int valor) {
+        //if ()
+        
+        //resize();
+        //shiftRight();
+        array[0] = valor;
     }
 
-    public void addLast(int valor) {
-        // TODO
-    }
+   public void addLast(int valor) {
+      if (this.isFull())
+         resize(this.array.length*2);
+   
+      array[++last] = valor;
+   }
 
-    // adiciona um valor no índice passado como parâmetro
-    public void add(int index, int valor) {
-        //TODO
-    }
+   // adiciona um valor no índice passado como parâmetro
+   public void add(int index, int valor) {
+      
+   }
 
+    
     // você vai precisar desse método quando tentar adicionar e a fila já estiver cheia
     private void resize(int novaCapacidade) {
-       // TODO 
+      Integer[] arrayResized = new Integer[novaCapacidade];
+       //System.arraycopy(array, 0, arrayResized, 0, this.array.length);
+      for (int i = 0; i < this.array.length; i++) 
+           arrayResized[i] = array[i];
+
+      array = arrayResized;
     }
 
-    public void assegureCapacidade(int capacidadePretendida) {
-       // TODO
+    public Integer[] assegureCapacidade(int capacidadePretendida) {
+        return new Integer[capacidadePretendida];
     }
 
     public int getFirst() {
-        // TODO
-        return -1;
+        return array[0];
     }
 
     public int getLast() {
-        //TODO
-        return -1;
+        return this.array[this.last];
     }
 
     // retorna o elemento no índice passado como parâmetro
@@ -56,25 +77,45 @@ public class ArrayList {
     }
 
     // deve lançar exceção caso a fila esteja vazia.
-    public void removeLast() {
-        //TODO
+   public void removeLast() {
+      if (isEmpty())
+         throw new ArrayIndexOutOfBoundsException("Fila vazia");
+      
+      this.last--;
+      
+        
     }
 
     // remove o valor no índice passado como parâmetro. 
     // lançar exceção se o índice não for válido.
     public void remove(int index) {
-        // TODO
+        if (isEmpty())
+            throw new ArrayIndexOutOfBoundsException("Fila vazia");
+        
+        //shifLeft(array, index);
+        last--;
     }
 
     // remove a primeira ocorrência do elemento cujo valor foi passado como parâmetro.
     // se não encontrar, não faça nada.
     public void removeByValue(int value) {
-        // TODO
+      
+      
+      for (int i = 0; i < size(); i++) {
+         if (array[i] == value){
+            remove(i);
+            break;
+         }
+         
+      }
     }
 
     // retorna o índice da primeira ocorrência do valor passado como parâmetro.
     public int indexOf(int value) {
-        // TODO
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == value)
+                return i;
+        }
         return -1;
     }
    
@@ -83,13 +124,21 @@ public class ArrayList {
         return -1;
     }
     
+    @Override
     // deve retornar uma string representando a lista. 
     public String toString() {
-        return "";
+      String output = "";
+      for (Object elem : this.array)
+            output += " ";
+
+      return output;
     }
     
     public int size() {
-        // TODO
-        return 0;
+        int tam = 0;
+        
+        for (int i = 0; i < last; i++)
+           tam++;
+        return tam;
     }
 }

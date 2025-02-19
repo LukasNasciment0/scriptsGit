@@ -1,8 +1,8 @@
 # Identificação
 
-* Nome: 
-* Email (@ccc): 
-* Matrícula: 
+* Nome: Lukas Soares do Nascimento
+* Email (@ccc): lukas.soares.nascimento@ccc.ufcg.edu.br
+* Matrícula: 123210298
 
 # Roteiro: Implementação de ArrayList
 
