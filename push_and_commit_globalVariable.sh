@@ -5,7 +5,7 @@ USERNAME=${GITHUB_USERNAME}
 TOKEN=${GITHUB_TOKEN_NEW} 
 
 # Definir URL do repositório com autenticação via token
-REPO_URL="https://$USERNAME:$TOKEN@github.com/LukasNasciment0/scriptsGit.git"
+REPO_URL="https://$USERNAME:$TOKEN@github.com/eda-ufcg/arraylist-LukasNasciment0.git"
 
 # Verifica se há alterações a serem adicionadas
 if [[ -n $(git status --porcelain) ]]; then
