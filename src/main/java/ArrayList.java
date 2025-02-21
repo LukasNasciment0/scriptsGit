@@ -1,17 +1,19 @@
-import java.util.ArrayList;
 
 public class ArrayList {
 
-   private ArrayList[] array;
+   private Integer[] array;
    
    /**
     * indice do ultimo elemento
     */
    private Integer last; 
+
+   private Integer size;
    
    public ArrayList(int capacidadeInicial) {
-      array = new ArrayList[capacidadeInicial];
+      array = new Integer[capacidadeInicial];
       last = -1;
+      size = 0;
    }
 
    public boolean isEmpty() {
@@ -19,16 +21,16 @@ public class ArrayList {
    }
 
    private boolean isFull(){
-      return this.size() == this.array.length;
+      return this.size == this.array.length;
    }
       
    public void addFirst(int valor) {
       if (isFull())
          resize(array.length * 2);
       
-      
       shiftRight(array, last);
       array[0] = valor;
+      size++;
     }
 
    public void addLast(int valor) {
@@ -36,13 +38,16 @@ public class ArrayList {
          resize(this.array.length*2);
    
       array[++last] = valor;
+      size++;
    }
 
    // adiciona um valor no índice passado como parâmetro
    public void add(int index, int valor) {
       if (isFull())
         resize(array.length * 2);
-   }
+
+      shiftRight(array, index);
+       }
 
     
    // você vai precisar desse método quando tentar adicionar e a fila já estiver cheia
@@ -58,7 +63,7 @@ public class ArrayList {
    public Integer[] assegureCapacidade(int capacidadePretendida) {
       return new Integer[capacidadePretendida];
    }
-t
+
    public int getFirst() {
       return array[0];
    }
@@ -133,13 +138,6 @@ t
       return output.substring(0, output.length() -2);
    }
    
-   public int size() {
-      int tam = 0;
-      
-      for (int i = 0; i < last; i++)
-         tam++;
-      return tam;
-   }
 
    /**
     * Empurra os elementos do array para a posição do paramentro

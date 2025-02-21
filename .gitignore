@@ -92,3 +92,8 @@ node_modules/
 *.swo
 *.sh.swo
 node_modules/
+*.log
+*.swp
+*.swo
+*.sh.swo
+node_modules/
